@@ -1,0 +1,294 @@
+/* =======================
+   Profile Edit Page CSS
+   ======================= */
+
+/* --- Global & Layout --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+
+/* Profile container */
+.profile-wrapper {
+    max-width: 1150px;
+    margin: 120px auto 40px; /* match profile page */
+    padding: 0 20px;
+}
+
+/* PROFILE TITLE */
+.profile-title {
+    background-color: #ECB94C;
+    padding: 12px 25px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+/* --- LEFT COLUMN --- */
+.profile-left {
+    flex: 0 0 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Avatar card */
+.profile-avatar-card {
+    background-color: #F0E6E0;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 18px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-avatar-card svg,
+.profile-avatar-card img {
+    width: 200px;
+    height: 200px;
+}
+
+/* Avatar upload button */
+.upload-avatar {
+    position: relative;
+}
+
+.avatar-upload-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #C62A1B;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.avatar-upload-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* --- STREAK SECTION --- */
+.streak-card {
+    background: #7A2718;
+    color: white;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+}
+
+.streak-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.streak-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.1;
+}
+
+.streak-text h5 {
+    font-weight: 800;
+    font-size: 22px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.streak-text h2 {
+    font-weight: 800;
+    font-size: 46px;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Update / Back Buttons */
+.btn-update,
+.btn-save,
+.btn-logout,
+.btn-delete {
+    font-weight: 800;
+    border-radius: 12px;
+    padding: 12px 25px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+}
+
+.btn-update { background: #C62A1B; color: white; border: none; }
+.btn-save { background: #00c0ff; color: white; border: none; }
+.btn-logout { background: #98E587; color: white; border: none; }
+.btn-delete { background: #C62A1B; color: white; border: none; }
+
+/* --- RIGHT COLUMN --- */
+.profile-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-info-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+/* Top row: Name + Date */
+.profile-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-weight: 800;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 28px;
+    padding: 8px 300px 8px 16px;
+    text-align: left;
+}
+
+.profile-date {
+    font-weight: 800;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 28px;
+    padding: 8px 18px;
+}
+
+/* Form Fields */
+.profile-form label {
+    font-weight: 800;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.profile-form input.form-control,
+.readonly-input {
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 12px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.readonly-input {
+    background-color: #ECB94C !important;
+    border: none !important;
+}
+
+/* Notification dropdown */
+.notify-wrapper { position: relative; width: 100%; }
+.notify-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 18px;
+    padding: 12px;
+    font-weight: 800;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notify-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 12px;
+    padding: 14px;
+    z-index: 10;
+}
+
+/* Toggle Switch */
+.switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+.switch input { display: none; }
+.slider {
+    position: absolute; cursor: pointer;
+    top:0; left:0; right:0; bottom:0;
+    background:#ccc; transition:.3s; border-radius:26px;
+}
+.slider:before {
+    content:""; position:absolute; height:22px; width:22px;
+    left:2px; bottom:2px; background:white;
+    transition:.3s; border-radius:50%;
+}
+input:checked + .slider { background:#4CAF50; }
+input:checked + .slider:before { transform:translateX(24px); }
+
+/* Action Buttons */
+.profile-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Confirmation popup */
+.confirm-box {
+    display: none;
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-content {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+}
+.confirm-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.confirm-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.cancel-btn { background: #ccc; }
+.delete-btn { background: #C62A1B; color: white; }
+

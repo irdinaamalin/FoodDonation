@@ -1,0 +1,251 @@
+/* GLOBAL STYLES */
+/* Target the Logis Template Navigation Links */
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* This creates a sharp line: White for 80px (header area), then Yellow for the rest */
+    background: linear-gradient(
+        to bottom, 
+        #ffffff 0px, 
+        #ffffff 80px, 
+        #fac74f 80px, 
+        #fac74f 100%
+    ) !important;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 20px;
+    margin-top: 80px; /* Aligns content to start exactly where the yellow begins */
+}
+
+/* HEADER & TITLES */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.list-label {
+    background: #b21d04;
+    color: white;
+    font-family: 'Poppins';
+    font-size: 28px;
+    padding: 18px 35px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* SEARCH & BUTTONS */
+#searchInput {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.filter-right {
+    display: flex;
+    gap: 15px;
+}
+
+.year-btn, .all-btn {
+    padding: 14px 26px;
+    font-size: 28px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.year-btn { background: black; color: white; }
+.all-btn { background: white; color: black; border: 2px solid black; }
+.all-btn:hover { background: #eee; }
+
+/* TABLE STYLES */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+th {
+    font-family: 'Poppins';
+    background: #b21d04;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Center ONLY the Status column Header (10th column) */
+th:nth-child(10) {
+    text-align: center;
+}
+
+/* Center ONLY the Status column Data (10th column) */
+td:nth-child(10) {
+    text-align: center;
+}
+
+tr:hover {
+    background: #fff0d4;
+    cursor: pointer;
+}
+
+/* STATUS BADGES */
+/* STATUS BADGES - ADJUSTED FOR UNIFORM SIZE */
+.badge {
+    padding: 6px 0;
+    border-radius: 20px;
+    font-size: 11px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 110px;
+    text-align: center;
+    line-height: 1;
+}
+
+.pending { background: #1fa3ff; }
+.under-review { background: #ff9f29; }
+.resolved { background: #32d86b; }
+.rejected { background: #d93a2b; }
+/* MODAL STYLES */
+.modal-bg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: white;
+    width: 550px;
+    max-height: 90vh;
+    padding: 30px;
+    border-radius: 15px;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-box h2 {
+    font-family: 'Poppins';
+    color: #b21d04;
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modal-images img {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.modal-images img:hover {
+    transform: scale(1.03);
+}
+
+/* MODAL ACTION BUTTONS */
+.close-btn, .approve-btn, .reject-btn, .under-review-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.close-btn { background: #777; width: 100%; margin-top: 20px; }
+.approve-btn { background: #32d86b; margin-right: 10px; }
+.reject-btn { background: #d93a2b; margin-right: 10px; }
+.under-review-btn { background: #ff9f29; }
+
+.approve-btn:hover, .reject-btn:hover, .under-review-btn:hover {
+    filter: brightness(90%);
+}
+
+/* REPORT CARD STYLES */
+.report-card {
+    display: flex;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.report-index {
+    background: #5E0C0C;
+    color: white;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.report-body {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header-row { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .title { font-size: 40px; }
+    .report-body { flex-direction: column; align-items: flex-start; }
+    .report-index { width: 40px; }
+    .modal-box { width: 90%; padding: 20px; }
+}
+

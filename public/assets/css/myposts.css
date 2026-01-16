@@ -1,0 +1,254 @@
+/* 1. Global & Layout Adjustments */
+        #gs-posts-wrapper * { 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        /* Menghilangkan padding layout supaya hero boleh rapat ke header */
+        .my-posts-page main, 
+        .my-posts-page .container {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+            max-width: 100% !important;
+        }
+
+        /* 2. Hero Section - Full Width */
+        .posts-hero-outer {
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: -80px; /* Tarik naik ke bawah fixed header */
+            overflow: hidden;
+        }
+
+        .posts-hero-section {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content h1 {
+            color: #ffffff;
+            font-size: 48px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* 3. Content Wrapper */
+        #gs-posts-wrapper {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #111;
+        }
+
+        /* 4. Search & Filter Bar */
+        .search-bar-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search-bar-container input[type="text"], 
+        .search-bar-container select {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 2px solid #000;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .search-bar-container input[type="text"] { flex: 1; }
+
+        /* 5. Card Styles */
+        .gs-card { 
+            background: #F3E0B8; 
+            border: 1px solid #808080; 
+            border-radius: 6px; 
+            padding: 18px; 
+            display: flex; 
+            gap: 18px; 
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .gs-index { 
+            width: 56px; 
+            background: #5E0C0C; 
+            color: #fff; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: 700; 
+            font-size: 18px; 
+            writing-mode: vertical-rl; 
+            transform: rotate(180deg); 
+            border-radius: 4px; 
+            flex-shrink: 0; 
+        }
+
+        .gs-body { flex: 1; display: flex; gap: 20px; align-items: center; }
+
+        .gs-info { 
+            background: #5A0808; 
+            color: #fff; 
+            padding: 20px; 
+            border-radius: 6px; 
+            flex: 1; 
+            position: relative;
+            min-width: 0;
+        }
+
+        .gs-title { font-size: 26px; color: #111; margin: 0 0 10px 0; font-weight: 600; }
+
+        .gs-desc {
+            color: #F6E6D1;
+            margin-bottom: 12px;
+            font-size: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: calc(100% - 160px);
+        }
+
+        .meta-row { display: flex; gap: 8px; color: #F6E6D1; font-size: 14px; margin-bottom: 4px; }
+
+        .badge-column { 
+            position: absolute; 
+            right: 18px; 
+            top: 18px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+            min-width: 140px; 
+        }
+
+        .gs-badge, .see-btn {
+            width: 100%; 
+            padding: 8px 0; 
+            border-radius: 28px; 
+            font-weight: 700; 
+            font-size: 12px; 
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .see-btn { background: #000; color: #fff; }
+        .badge-active { background: #94E085; color: #111; }
+        .badge-claimed { background: #8ED1FF; color: #111; }
+        .badge-completed { background: #C59CFF; color: #111; }
+        .badge-expired { background: #FF6969; color: #111; }
+
+        /* 6. Image Column */
+        .img-col { width: 150px; height: 150px; flex-shrink: 0; }
+        .img-col img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            border: 3px solid #fff; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gs-body { flex-direction: column; align-items: stretch; }
+            .img-col { width: 100%; height: 200px; }
+            .gs-index { display: none; }
+            .gs-desc { max-width: 100%; }
+            .badge-column { position: static; margin-top: 15px; width: 100%; }
+        }
+
+        /* Navigation text color adjustments */
+
+        #header .navmenu ul li a {
+            color: #ffffff !important;
+            text-decoration: none !important;
+
+        }
+
+        #header .navmenu ul li a.active {
+            color: #ffffff !important;
+
+        }
+
+
+        .my-posts-page main.container {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            max-width: 100% !important;
+
+        }
+
+        .posts-hero-outer {
+            margin-top: -80px;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+
+        }
+
+        /* Memastikan content hero berada di tengah */
+
+        .posts-hero-section {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+        }
+
+
+        /* SEARCH BAR & BUTTONS */
+
+        #gs-posts-wrapper * { box-sizing: border-box; font-family: Poppins, sans-serif; }
+        .search-bar-container { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:20px; padding: 0 20px; }
+        .search-bar-container input[type="text"] { flex:1; padding:8px 14px; border-radius:6px; border:2px solid #000; font-size:14px; }
+        .search-bar-container select { padding:8px 14px; border-radius:6px; border:2px solid #000; font-size:14px; background:#fff; cursor:pointer; }
+
+
+        /* IMAGE UNIFORMITY */
+
+        .img-col img {
+            width: 150px !important;
+            height: 150px !important;
+            object-fit: cover !important;
+            border-radius: 10px;
+            display: block;
+
+        }
+
+
+
+        /* FOOTER */
+
+        .custom-red-footer {
+            background-color: #5E0C0C !important;
+            color: #ffffff !important;
+            width: 100%;
+            padding: 40px 0;
+            margin-top: 30px;
+
+        }
+
+        .custom-red-footer p {
+            margin-bottom: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
